@@ -29,9 +29,12 @@ public class Game {
     public static void DisplayBoard(int[][] board, Player p1, Player p2) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
-                if (p1.getPlayerPosition() == board[i][j] && p1.getPlayerPosition() > 1) {
+                if (p1.getPlayerPosition() == p2.getPlayerPosition() && p1.getPlayerPosition() == board[i][j]) {
+                    System.out.print(" C->" + board[i][j] + "<-P ");
+
+                } else if (p1.getPlayerPosition() == board[i][j] && p1.getPlayerPosition() > 1) {
                     System.out.print(board[i][j] + "<-P ");
-                } else if (p2.getPlayerPosition() == board[i][j] && p1.getPlayerPosition() > 1) {
+                } else if (p2.getPlayerPosition() == board[i][j] && p2.getPlayerPosition() > 1) {
                     System.out.print(board[i][j] + "<-C ");
                 } else {
                     System.out.print(board[i][j] + "    ");
@@ -62,10 +65,20 @@ public class Game {
             System.out.println("welcome to Snake and Ladder Game");
             System.out.println("enter player name");
 
-            Player player1 = new Player(sc.next(), 'P');
-            Player player2 = new Player("Computer", 'C');
+            Player player1 = new Player(sc.next());
+            Player player2 = new Player("Computer");
             while (player1.getPlayerPosition() != 100 && player2.getPlayerPosition() != 100) {
-                int Dice = rollDice();
+                int Dice = 0;
+                if (turn == 1) {
+                    System.out.println("press 1 to roll the dice");
+                    if (sc.nextInt() == 1) {
+
+                        Dice = rollDice();
+                    } else {
+                        System.out.println("roll Dice again");
+                        continue;
+                    }
+                }
                 if (turn == 1) {
 
                     System.out.println(Dice + " came <- " + player1.getPlayerName());
@@ -119,7 +132,7 @@ public class Game {
                     }
                     turn = 0;
                 } else {
-
+                    Dice = rollDice();
                     System.out.println(Dice + " came <- " + player2.getPlayerName());
 
                    

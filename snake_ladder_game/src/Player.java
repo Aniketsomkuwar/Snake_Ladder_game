@@ -1,13 +1,13 @@
 class Player {
     String PlayerName = "";
 
-    char PlayerSymbol = '0';
+
 
     int PlayerPosition = 1;
 
-    public Player(String playerName, char playerSymbol) {
+    public Player(String playerName) {
         PlayerName = playerName;
-        PlayerSymbol = playerSymbol;
+
     }
 
     public int getPlayerPosition() {
@@ -18,15 +18,6 @@ class Player {
         PlayerPosition = playerPosition;
     }
 
-
-
-    public char getPlayerSymbol() {
-        return PlayerSymbol;
-    }
-
-    public void setPlayerSymbol(char playerSymbol) {
-        PlayerSymbol = playerSymbol;
-    }
 
     public String getPlayerName() {
         return PlayerName;
