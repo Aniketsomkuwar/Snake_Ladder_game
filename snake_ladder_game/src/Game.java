@@ -70,103 +70,109 @@ public class Game {
 
                     System.out.println(Dice + " came <- " + player1.getPlayerName());
 
-                    IncreasePosition(Dice, player1);
-                    if (player1.getPlayerPosition() + Dice > 100) {
+                    int playerpos = player1.getPlayerPosition();
+                    if (playerpos + Dice > 100) {
                         System.out.println("opps number excedded ! play in next turn ");
                         turn = 0;
                         continue;
 
                     }
-                    if (player1.getPlayerPosition() == 4) {
+                    IncreasePosition(Dice, player1);
+                    if (playerpos == 4) {
                         player1.setPlayerPosition(14);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 9) {
+                    } else if (playerpos == 9) {
                         player1.setPlayerPosition(31);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 20) {
+                    } else if (playerpos == 20) {
                         player1.setPlayerPosition(38);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 28) {
+                    } else if (playerpos == 28) {
                         player1.setPlayerPosition(84);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 40) {
+                    } else if (playerpos == 40) {
                         player1.setPlayerPosition(59);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 51) {
+                    } else if (playerpos == 51) {
                         player1.setPlayerPosition(67);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 63) {
+                    } else if (playerpos == 63) {
                         player1.setPlayerPosition(81);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 71) {
+                    } else if (playerpos == 71) {
                         player1.setPlayerPosition(91);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
-                    } else if (player1.getPlayerPosition() == 17) {
+                    } else if (playerpos == 17) {
                         DecreasePosition(7, player1);
-                    } else if (player1.getPlayerPosition() == 62) {
+                    } else if (playerpos == 62) {
                         DecreasePosition(19, player1);
-                    } else if (player1.getPlayerPosition() == 87) {
+                    } else if (playerpos == 87) {
                         DecreasePosition(24, player1);
-                    } else if (player1.getPlayerPosition() == 64) {
+                    } else if (playerpos == 64) {
                         DecreasePosition(60, player1);
-                    } else if (player1.getPlayerPosition() == 54) {
+                    } else if (playerpos == 54) {
                         DecreasePosition(34, player1);
-                    } else if (player1.getPlayerPosition() == 93) {
+                    } else if (playerpos == 93) {
                         DecreasePosition(73, player1);
-                    } else if (player1.getPlayerPosition() == 97) {
+                    } else if (playerpos == 97) {
                         DecreasePosition(76, player1);
                     }
                     turn = 0;
                 } else {
+
                     System.out.println(Dice + " came <- " + player2.getPlayerName());
-                    if (player2.getPlayerPosition() + Dice > 100) {
-                        System.out.println("opps number excedded !");
+
+                   
+                    int playerpos = player2.getPlayerPosition();
+                    if (playerpos + Dice > 100) {
+                        System.out.println("opps number excedded ! play in next turn ");
                         turn = 1;
                         continue;
-                    }
 
-                    IncreasePosition(Dice, player2);
-
-                    if (player2.getPlayerPosition() == 4) {
+                    } IncreasePosition(Dice, player2);
+                    if (playerpos == 4) {
                         player2.setPlayerPosition(14);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 9) {
+                    } else if (playerpos == 9) {
                         player2.setPlayerPosition(31);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 20) {
+                    } else if (playerpos == 20) {
                         player2.setPlayerPosition(38);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 28) {
+                    } else if (playerpos == 28) {
                         player2.setPlayerPosition(84);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 40) {
+                    } else if (playerpos == 40) {
                         player2.setPlayerPosition(59);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 51) {
+                    } else if (playerpos == 51) {
                         player2.setPlayerPosition(67);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 63) {
+                    } else if (playerpos == 63) {
                         player2.setPlayerPosition(81);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 71) {
+                    } else if (playerpos == 71) {
                         player2.setPlayerPosition(91);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
-                    } else if (player2.getPlayerPosition() == 17) {
+                    } else if (playerpos == 17) {
                         DecreasePosition(7, player2);
-                    } else if (player2.getPlayerPosition() == 62) {
+                    } else if (playerpos == 62) {
                         DecreasePosition(19, player2);
-                    } else if (player2.getPlayerPosition() == 87) {
+                    } else if (playerpos == 87) {
                         DecreasePosition(24, player2);
-                    } else if (player2.getPlayerPosition() == 64) {
+                    } else if (playerpos == 64) {
                         DecreasePosition(60, player2);
-                    } else if (player2.getPlayerPosition() == 54) {
+                    } else if (playerpos == 54) {
                         DecreasePosition(34, player2);
-                    } else if (player2.getPlayerPosition() == 93) {
+                    } else if (playerpos == 93) {
                         DecreasePosition(73, player2);
-                    } else if (player2.getPlayerPosition() == 97) {
+                    } else if (playerpos == 97) {
                         DecreasePosition(76, player2);
                     }
                     turn = 1;
+                    if(player1.getPlayerPosition()==100 || player2.getPlayerPosition()==100){
+                        break;
+                    }
                 }
 
                 DisplayBoard(board, player1, player2);
