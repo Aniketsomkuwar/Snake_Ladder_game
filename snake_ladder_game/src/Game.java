@@ -65,10 +65,18 @@ public class Game {
             Player player1 = new Player(sc.next(), 'P');
             Player player2 = new Player("Computer", 'C');
             while (player1.getPlayerPosition() != 100 && player2.getPlayerPosition() != 100) {
-
                 int Dice = rollDice();
                 if (turn == 1) {
+
+                    System.out.println(Dice + " came <- " + player1.getPlayerName());
+
                     IncreasePosition(Dice, player1);
+                    if (player1.getPlayerPosition() + Dice > 100) {
+                        System.out.println("opps number excedded ! play in next turn ");
+                        turn = 0;
+                        continue;
+
+                    }
                     if (player1.getPlayerPosition() == 4) {
                         player1.setPlayerPosition(14);
                         System.out.println("ohh " + player1.getPlayerName() + " took the ladder");
@@ -110,7 +118,15 @@ public class Game {
                     }
                     turn = 0;
                 } else {
+                    System.out.println(Dice + " came <- " + player2.getPlayerName());
+                    if (player2.getPlayerPosition() + Dice > 100) {
+                        System.out.println("opps number excedded !");
+                        turn = 1;
+                        continue;
+                    }
+
                     IncreasePosition(Dice, player2);
+
                     if (player2.getPlayerPosition() == 4) {
                         player2.setPlayerPosition(14);
                         System.out.println("ohh " + player2.getPlayerName() + " took the ladder");
