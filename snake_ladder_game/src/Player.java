@@ -4,8 +4,6 @@ class Player {
     char PlayerSymbol = '0';
 
     int PlayerPosition = 1;
-    int PLayerX = 0;
-    int PlayerY = 0;
 
     public Player(String playerName, char playerSymbol) {
         PlayerName = playerName;
@@ -20,21 +18,7 @@ class Player {
         PlayerPosition = playerPosition;
     }
 
-    public int getPLayerX() {
-        return PLayerX;
-    }
 
-    public void setPLayerX(int PLayerX) {
-        this.PLayerX = PLayerX;
-    }
-
-    public int getPlayerY() {
-        return PlayerY;
-    }
-
-    public void setPlayerY(int playerY) {
-        PlayerY = playerY;
-    }
 
     public char getPlayerSymbol() {
         return PlayerSymbol;
